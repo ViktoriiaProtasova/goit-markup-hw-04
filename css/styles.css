@@ -13,6 +13,7 @@
   --main-background-color: #ffffff;
   --card-column-gap: 24px;
   --card-row-gap: 48px;
+  --gradient: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
 }
 
 body {
@@ -97,6 +98,7 @@ ol {
   align-items: center;
 }
 .logo {
+  margin-right: 76px;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -111,7 +113,6 @@ ol {
 }
 .nav-list {
   display: flex;
-  margin-left: 76px;
 }
 .nav-item:not(:last-child) {
   margin-right: 40px;
@@ -146,15 +147,19 @@ ol {
 /* Hero */
 
 .hero {
-  max-width: 1440px;
-  margin: 0 auto;
   padding-top: 188px;
   padding-bottom: 188px;
-  background-color: var(--dark-color);
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url(../images/people-office.jpg);
-  background-size: cover;
   text-align: center;
+}
+.hero.overlay {
+  max-width: 1440px;
+  min-height: 600px;
+  margin: 0 auto;
+  background-color: var(--dark-color);
+  background-image: var(--gradient), url(../images/people-office.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .hero-title {
   max-width: 496px;
@@ -271,9 +276,7 @@ ol {
 }
 .team-list-field {
   padding-top: 32px;
-  padding-right: 16px;
   padding-bottom: 32px;
-  padding-left: 16px;
   text-align: center;
   background-color: var(--additional-text-color);
   border-radius: 0px 0px 4px 4px;
